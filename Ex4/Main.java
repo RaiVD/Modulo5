@@ -16,13 +16,10 @@ public class Main {
         contas.add(contaPedro);
         contas.add(contaPaulo);
 
-
         for (Conta calculo :contas) {
             System.out.println("Tributos da Conta Poupança: "+calculo.tributosPoupanca()+"\nTributos da Conta Corrente:  "+calculo.tributosContaCorrente()+"\nTributos do Seguro de vida: "+calculo.tributosSeguro());
             System.out.println("---------------------------------------------------------------------");
         }
-
-
 
     }
 }
