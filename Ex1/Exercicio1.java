@@ -1,6 +1,7 @@
 package Ex1;
 import java.util.ArrayList;
 import java.util.List;
+
 public class Exercicio1 {
     public static void main(String[] args) {
         List<Integer> listaDeNumeros = new ArrayList<>();

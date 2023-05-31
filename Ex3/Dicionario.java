@@ -1,7 +1,6 @@
 package Ex3;
 import java.util.HashMap;
 import java.util.Map;
-
 public class Dicionario {
     public void setDicionario() {
         Map<String, String> dicionario = new HashMap<>();
