@@ -5,7 +5,12 @@ import java.util.Set;
 
 public class Exercicio2 {
     public static void main(String[] args) {
+
+
         Set<Integer> listaDeNumeros = new HashSet<>();
+
+        boolean listaVazia = listaDeNumeros.isEmpty();
+        System.out.println("A lista esta vazia? "+listaVazia);
 
         listaDeNumeros.add(1);
         listaDeNumeros.add(5);
