@@ -10,13 +10,10 @@ public class Conta implements Tributos {
         this.saldoPoupanca = saldoPoupanca;
     }
 
-    public double getSaldoCorrente() {
-        return saldoCorrente;
-    }
 
     @Override
     public double tributosSeguro() {
-        return 42 * saldoSeguro;
+        return (42 * saldoSeguro);
     }
 
     @Override
@@ -26,6 +23,6 @@ public class Conta implements Tributos {
 
     @Override
     public double tributosPoupanca() {
-        return saldoPoupanca;
+        return saldoPoupanca - saldoPoupanca;
     }
 }
