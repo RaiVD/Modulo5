@@ -23,6 +23,7 @@ public class ListaMercado {
         if (nome.isEmpty()) {
             throw new UnsupportedOperationException("Não é permitido inserir nome vazio.");
         }
+        System.out.println("Compra realizada com sucesso");
         listaVerdura.put(nome, quantidade);
     }
 
@@ -38,6 +39,7 @@ public class ListaMercado {
         if (nome.isEmpty()) {
             throw new UnsupportedOperationException("Não é permitido inserir nome vazio.");
         }
+        System.out.println("Compra realizada com sucesso");
         listaLegumes.put(nome, quantidade);
     }
 
@@ -53,6 +55,7 @@ public class ListaMercado {
         if (nome.isEmpty()) {
             throw new UnsupportedOperationException("Não é permitido inserir nome vazio.");
         }
+        System.out.println("Compra realizada com sucesso");
         listaGrao.put(nome, quantidade);
     }
 
@@ -69,6 +72,7 @@ public class ListaMercado {
         if (nome.isEmpty()) {
             throw new UnsupportedOperationException("Não é permitido inserir nome vazio.");
         }
+        System.out.println("Compra realizada com sucesso");
         listaOutros.put(nome, quantidade);
     }
 

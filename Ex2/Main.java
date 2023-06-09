@@ -1,79 +1,76 @@
 package Ex2;
 
 import java.math.BigDecimal;
-import java.math.RoundingMode;
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
-    private static final BigDecimal dolarAmericano = new BigDecimal("5.25");
-    private static final BigDecimal COTACAO_DOLAR_CANADENSE = new BigDecimal("4.15");
-    private static final BigDecimal COTACAO_EURO = new BigDecimal("6.15");
-    private static final BigDecimal COTACAO_LIBRA_ESTERLINA = new BigDecimal("7.50");
+    private static final BigDecimal americano = new BigDecimal("5.25");
+    private static final BigDecimal canadense = new BigDecimal("4.15");
+    private static final BigDecimal euro = new BigDecimal("6.15");
+    private static final BigDecimal esterlina = new BigDecimal("7.50");
     public static void main(String[] args) {
-        System.out.println("Bem-vindo ao conversor de moedas!");
+        System.out.println("============ Bem-vindo ao conversor de moedas ============");
         Scanner scanner = new Scanner(System.in);
 
         boolean continuar = true;
         while (continuar) {
             try {
-                System.out.println("Qual moeda você deseja converter?");
-                System.out.println("Opções: Dólar americano, Dólar canadense, Euro, Libra Esterlina");
+                System.out.println("=========== Qual moeda você deseja converter? ============");
+                System.out.println("Dólar americano | Dólar canadense | Euro | Libra Esterlina");
                 String moeda = scanner.nextLine();
 
                 BigDecimal cotacao;
                 switch (moeda.toLowerCase()) {
                     case "dólar americano":
-                        cotacao = dolarAmericano;
+                        cotacao = americano;
                         break;
                     case "dólar canadense":
-                        cotacao = COTACAO_DOLAR_CANADENSE;
+                        cotacao = canadense;
                         break;
                     case "euro":
-                        cotacao = COTACAO_EURO;
+                        cotacao = euro;
                         break;
                     case "libra esterlina":
-                        cotacao = COTACAO_LIBRA_ESTERLINA;
+                        cotacao = esterlina;
                         break;
                     default:
                         throw new IllegalArgumentException("Tipo de moeda inválido");
                 }
 
-                System.out.println("O programa só converte para Real (R$).");
+                System.out.println("O programa só converte para Real");
 
                 System.out.println("Digite o valor a ser convertido:");
-                String valorInput = scanner.nextLine();
-                if (valorInput.isEmpty()) {
+                String valorParaConvercao = scanner.nextLine();
+                if (valorParaConvercao.isEmpty()) {
                     throw new NumberFormatException("Para moeda, o valor monetário deve ser um número decimal");
                 }
-                BigDecimal valor = new BigDecimal(valorInput);
+                BigDecimal valor = new BigDecimal(valorParaConvercao);
 
                 if (valor.compareTo(BigDecimal.ZERO) <= 0) {
-                    System.out.println("Valor inválido, por favor, tente novamente.");
+                    System.out.println("Valor inválido, pr, tente novamente.");
                     continue;
                 }
 
                 BigDecimal valorConvertido = valor.multiply(cotacao);
 
                 DecimalFormat decimalFormat = new DecimalFormat("#,##0.00");
-                System.out.println("A " + moeda + " na cotação de hoje está em " + cotacao +
-                        ", o valor que pediu para converter de " + valor + " em reais é R$" +
-                        decimalFormat.format(valorConvertido));
+                System.out.println("Cotação atual da(o) "+moeda+" é: "+cotacao);
+                System.out.println("Valor a ser convertido: "+ valor);
+                System.out.println("O valor convertido em reais é R$"+decimalFormat.format(valorConvertido));
 
-                System.out.println("Deseja fazer outra conversão? (s/n)");
+                System.out.println("Deseja fazer outra conversão?\n s. Sim| n. Não");
                 String resposta = scanner.nextLine();
                 if (!resposta.equalsIgnoreCase("s")) {
                     continuar = false;
                 }
             } catch (NumberFormatException exception) {
                 System.out.println("Erro: " + exception.getMessage());
-            } catch (IllegalArgumentException exceptionIlegal) {
-                System.out.println("Erro: " + exceptionIlegal.getMessage());
+            } catch (IllegalArgumentException exception) {
+                System.out.println("Erro: " + exception.getMessage());
             }
         }
-
-        scanner.close();
-        System.out.println("Obrigado por usar o conversor de moedas!");
+        System.out.println("=====Obrigado=====");
     }
 }
 
