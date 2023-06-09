@@ -1,4 +1,4 @@
-package Ex4;
+package Ex3;
 
 import java.util.Scanner;
 
@@ -35,7 +35,7 @@ public class Conta {
             System.out.println("Qual valor deseja usar do seu crédito?");
             double credito = ler.nextDouble();
             if (credito > limiteCredito) {
-                throw new ContaExcecao("Limite de credito disponivel é R$"+ getLimiteCredito()+", não é possivel realizar essa operação!");
+                throw new ContaExcecao("Valor excede limite de credito disponivel");
             } else {
                 setLimiteCredito(getLimiteCredito() - credito);
                 System.out.println("Limite de crédito: " + getLimiteCredito());
@@ -66,7 +66,7 @@ public class Conta {
             System.out.println("Qual valor deseja sacar?");
             double saque = ler.nextDouble();
             if (saque > saldo) {
-                throw new ContaExcecao("Limite de credito disponivel é R$"+ getSaldo()+", não é possivel realizar essa operação!");
+                throw new ContaExcecao("Valor excede limite de saldo disponivel");
             } else {
                 setSaldo(getSaldo() - saque);
                 System.out.println("Saldo atual: " + getSaldo());
