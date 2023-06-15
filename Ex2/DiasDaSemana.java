@@ -7,6 +7,7 @@ public class DiasDaSemana {
     public static String diaDaSemanaAtual(){
         DayOfWeek diaAtualDaSemana = LocalDate.now().getDayOfWeek();
         String nomeDiaSemana = diaAtualDaSemana.getDisplayName(TextStyle.FULL, Locale.getDefault());
+
         return "Hoje é "+nomeDiaSemana;
     }
     public static String melhorDiaFeira() {

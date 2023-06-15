@@ -1,11 +1,9 @@
 package Ex2;
 import org.junit.jupiter.api.Test;
-
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.format.TextStyle;
 import java.util.Locale;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 public class DiasDaSemanaTeste {
     @Test
